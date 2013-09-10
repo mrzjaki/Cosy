@@ -3,6 +3,11 @@ then
 	source $HOME/.shell/.envs
 fi
 
+if [ -f $HOME/.shell/.prompt ]; 
+then
+	source $HOME/.shell/.prompt
+fi
+
 if [ -f $HOME/.shell/.aliases ]; 
 then
 	source $HOME/.shell/.aliases
