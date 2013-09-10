@@ -4,7 +4,7 @@ function parse_git {
 	then
 		return
 	else
-		local gitRef="$(git symbolic-ref HEAD &> /dev/null)"
+		local gitRef="$(git symbolic-ref HEAD 2> /dev/null)"
 		local gitBranch="$(echo ${gitRef#refs/heads/})"
 
 		git diff --quiet --ignore-submodules HEAD &> /dev/null
@@ -18,7 +18,6 @@ function parse_git {
 }
 
 PS1="\n"
-PS1="$PS1$COLOR_YELLOWBOLD\$(parse_idhostname) "
 PS1="$PS1$COLOR_BLUEBOLD\W "
 PS1="$PS1$COLOR_BLACKBOLD\$(parse_git)"
 PS1="$PS1$COLOR_MAGENTABOLD ❯ $COLOR_RESET"
