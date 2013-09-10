@@ -1,4 +1,4 @@
-if [ -f $HOME/.shell/.env ]; 
+if [ -f $HOME/.shell/.envs ]; 
 then
-	source $HOME/.shell/.env
+	source $HOME/.shell/.envs
 fi
