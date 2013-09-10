@@ -1,0 +1,24 @@
+# Universal functions that hopefully works with BASH and ZSH
+
+# ------
+# File, Directory & Navigation Functions
+# ------
+
+# Make directory and cd into it
+function mkcd {
+	if [ $# -e 1 ]; 
+	then
+		mkdir -p "$@" && cd "$@"
+	fi
+}
+
+# cd to a directory and ls
+function cdls {
+	cd "$@" && ls
+}
+
+function linebreak {
+    echo -e  "<==================\
+             ($(date +"%A %e %B %Y %H:%M"))\
+             ==================>"
+}

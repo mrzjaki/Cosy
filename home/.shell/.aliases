@@ -1,0 +1,36 @@
+# Universal aliases that hopefully works with BASH and ZSH
+
+# ------
+# General
+# ------
+
+# if user is not root, pass all commands via sudo #
+if [ $UID -ne 0 ]; then
+	alias edit='sudo $EDITOR'
+fi
+
+alias sudo='sudo '
+alias edit='$EDITOR'
+alias wget='wget -c'
+
+# ------
+# File, Directory & Navigation
+# ------
+alias la='ls -a'
+alias ll='ls -l'
+alias lt='ls -lt'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias cdb='cd -'
+
+alias o='open'
+alias oo='open .'
+
+# ------
+# Application Launcher and Shortcuts
+# ------
+alias homeshick="$HOME/.homesick/repos/homeshick/home/.homeshick"
+alias vi=vim

@@ -1,0 +1,42 @@
+# Universal environment variables that hopefully works with BASH and ZSH
+
+# ------
+# Set Path
+# ------
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+
+# ------
+# Directory Bookmarks
+# ------
+export DESKTOP="$HOME/Desktop"
+export DOWNLOADS="$HOME/Downloads"
+export DROPBOX="$HOME/Dropbox"
+
+# ------
+# File Bookmarks
+# ------
+export BASH_PROFILE="$HOME/.bash_profile"
+export BASHRC="$HOME/.bashrc"
+
+# Default Applications
+if [[ "$EDITOR" == "" ]] ; then
+	export EDITOR="vim"
+	export VISUAL="vim"
+fi
+
+# ------
+# Settings for colors in terminal
+# ------
+export TERM='xterm-color'
+export CLICOLOR=1
+export GREP_OPTIONS='--color=auto'
+
+#coloured man pages
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
+export LESSOPEN="|~/bin/lesspipe.sh %s"
