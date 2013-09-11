@@ -29,33 +29,38 @@ This way, I keep my OSX as pristine as possible.
 #### Notes: 
 Script will not run if Xcode Command Line Tools is not installed, I hope.
 
-- **Homebrew**
-	- brew-cask
-	- bash
-	- bash-completion
-	- git
-	- hub
-	- trash
-	- tree
-	- webkit2png
-	- wget
+##### Homebrew
+	
+- brew-cask
+- bash
+- bash-completion
+- git
+- hub
+- trash
+- tree
+- webkit2png
+- wget
 
-- **Homebrew-Cask**
- 	- adium
- 	- bettertouchtool
- 	- cyberduck
- 	- dropbox
- 	- github
- 	- google-chrome
- 	- google-chrome-canary
- 	- iterm2
- 	- sublime-text
- 	- the-unarchiver
- 	- transmission
- 	- vagrant
- 	- virtualbox
- 	- vlc 
+##### Homebrew-Cask
 
- - **Bash Version 4.2 (via homebrew)**
+- adium
+- bettertouchtool
+- cyberduck
+- dropbox
+- github
+- google-chrome
+- google-chrome-canary
+- iterm2
+- sublime-text
+- the-unarchiver
+- transmission
+- vagrant
+- virtualbox
+- vlc 
 
- - **Sane OSX Defaults**
+
+##### Bash Version 4.2 (via homebrew)
+Highly optional, only because I have no idea what's the difference. OSX 10.8 comes with bash version 3.x and works just fine for me. But I want a consistent bash version to work with, and the easiest way is to use the latest and greatest. 
+
+##### Sane OSX Defaults
+Highly optional, because different people prefer different cups of tea. As much as possible, I'd like to automate the whole process of setting up my new machine(s). 
