@@ -16,6 +16,8 @@ fi
 if [ -f $HOME/.shell/.functions ]; 
 then
 	source $HOME/.shell/.functions
+fi
+
 if [ -f `brew --prefix`/etc/bash_completion ]; 
 then
 	source `brew --prefix`/etc/bash_completion
