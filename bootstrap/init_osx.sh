@@ -82,7 +82,7 @@ echo 'Homebrew packages installed.'
 # Install brew cask packages
 # ------
 brew info brew-cask | grep "Not installed" > /dev/null;
-if [ $? = 1  ];
+if [ $? -eq 0 ];
 then
 	echo 'Error: brew-cask not installed.' 
 	echo 'Preparing to install brew-cask via homebrew...'
@@ -95,7 +95,7 @@ fi
 
 function installcask() {  
   brew cask info "${@}" | grep "Not installed" > /dev/null
-  if [ $? = 1  ];
+  if [ $? -eq 0 ];
   then
   	echo "Installing: ${@}"
     brew cask install "${@}"
@@ -147,9 +147,10 @@ read reply
 if [ reply = yes ];
 then
 	grep -q '/usr/local/bin/bash' /etc/shells
-	if [ $? -ne 0 ]
+	if [ $? -ne 0 ]; then
 		sudo -s $(printf '\n/usr/local/bin/bash' >> /etc/shells)
-		chsh -s /usr/local/bin/bash.
+		chsh -s /usr/local/bin/bash
+	fi
 fi
 unset reply
 
@@ -170,3 +171,4 @@ if [ reply = yes ];
 then
 	sudo reboot
 fi
+unset reply
