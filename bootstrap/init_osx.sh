@@ -66,6 +66,8 @@ brew upgrade
 echo 'Installing brew packages...'
 
 brew install brew-cask
+brew install bash
+brew install bash-completion
 brew install git
 brew install hub
 brew install trash
@@ -75,7 +77,6 @@ brew install wget
 
 brew cleanup
 echo 'Homebrew packages installed.'
-
 
 # ------
 # Install brew cask packages
@@ -137,6 +138,20 @@ installcask vlc
 
 brew cleanup
 echo 'Favourite OSX applications installed.'
+
+# ------
+# Setup bash 4.2
+# ------
+echo 'Set bash version 4.2 as default (y/n)'
+read reply
+if [ reply = yes ];
+then
+	grep -q '/usr/local/bin/bash' /etc/shells
+	if [ $? -ne 0 ]
+		sudo -s $(printf '\n/usr/local/bin/bash' >> /etc/shells)
+		chsh -s /usr/local/bin/bash.
+fi
+unset reply
 
 # ------
 # Setup sane OSX ML defaults
