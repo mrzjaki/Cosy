@@ -32,5 +32,4 @@ alias oo='open .'
 # ------
 # Application Launcher and Shortcuts
 # ------
-alias homeshick="$HOME/.homesick/repos/homeshick/home/.homeshick"
 alias vi=vim
