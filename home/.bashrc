@@ -22,3 +22,8 @@ if [ -f `brew --prefix`/etc/bash_completion ];
 then
 	source `brew --prefix`/etc/bash_completion
 fi
+
+if [ -f $HOME/.homesick/repos/cosy/bootstrap/iTerm2/base16-default.dark.sh ]; 
+then
+	source $HOME/.homesick/repos/cosy/bootstrap/iTerm2/base16-default.dark.sh
+fi
