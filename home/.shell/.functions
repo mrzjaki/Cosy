@@ -4,21 +4,84 @@
 # File, Directory & Navigation Functions
 # ------
 
+# Opens a Quick Look preview
+function ql() {
+	if [ $# -eq 1 ]; then
+		qlmanage -p "$@" &>/dev/null
+	else
+		echo "No arguments provided."
+	fi 
+}
+
 # Make directory and cd into it
-function mkcd {
-	if [ $# -e 1 ]; 
-	then
+function mkcd() {
+	if [ $# -eq 1 ]; then
 		mkdir -p "$@" && cd "$@"
+	else
+		echo "No arguments provided."
 	fi
 }
 
 # cd to a directory and ls
-function cdls {
+function cdls() {
 	cd "$@" && ls
 }
 
-function linebreak {
+# cd to the path of the front Finder window
+function cdf() {
+	FINDER_WINDOW=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
+	if [ "$FINDER_WINDOW" != "" ]; then
+		cd "$FINDER_WINDOW"; pwd
+	else
+		echo 'No Finder window found' >&2
+	fi
+	
+	unset FINDER_WINDOW
+}
+
+function linebreak() {
     echo -e  "<==================\
              ($(date +"%A %e %B %Y %H:%M"))\
              ==================>"
+}
+
+function toggleHiddenFiles() {
+	STATUS=`defaults read com.apple.finder AppleShowAllFiles`
+
+	if [ $STATUS == TRUE ]; then
+		defaults write com.apple.finder AppleShowAllFiles FALSE 
+	else
+		defaults write com.apple.finder AppleShowAllFiles TRUE
+	fi
+
+	unset STATUS
+
+	killall Finder
+}
+
+function toggleDesktop() {
+	STATUS=`defaults read com.apple.finder CreateDesktop`
+
+	if [ $STATUS == TRUE ]; then
+		defaults write com.apple.finder CreateDesktop FALSE
+	else
+		defaults write com.apple.finder CreateDesktop TRUE
+	fi
+	
+	unset STATUS
+
+	killall Finder
+}
+
+function removeDSStoreFiles() {
+	echo 'Are you sure you want to recursively remove .DS_Store files? (y/n)'
+	read REPLY
+	if [ $REPLY = y ]; then
+		find . -type f -name '*.DS_Store' -ls -delete
+	fi
+	unset REPLY
+}
+
+function watchStarWars() {
+	telnet towel.blinkenlights.nl
 }
