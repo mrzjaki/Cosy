@@ -1,0 +1,61 @@
+# Tap repositories
+tap homebrew/versions
+tap homebrew/dupes
+tap phinze/homebrew-cask
+
+# Update formula and homebrew
+update
+upgrade
+
+# Install brew packages
+install brew-cask
+install bash
+install bash-completion
+install git
+install hub
+install trash
+install tree
+install webkit2png
+install wget
+
+# Install Cask App
+cask install bettertouchtool
+cask install keyremap4macbook
+cask install the-unarchiver
+cask install transmission
+cask install dropbox
+cask install evernote
+cask install licecap
+cask install skype
+cask install spotify
+cask install vlc 
+
+# Install Browsers
+cask install google-chrome
+cask install google-chrome-canary
+# cask install opera-next
+# cask install firefox
+
+# Install Developer Tools
+cask install cyberduck
+cask install iterm2
+cask install github
+cask install sourcetree
+cask install sublime-text-3
+cask install vagrant
+cask install virtualbox
+cask install sitesucker
+
+# Install Quicklook Plugins
+cask install qlcolorcode
+cask install qlstephen
+cask install qlmarkdown
+cask install quicklook-json
+cask install quicklook-csv
+
+# Relegated Applications
+# installcask adium
+# installcask lime-chat
+# installcask layervault
+
+cleanup

@@ -13,8 +13,10 @@ set visible-stats on
 
 # Use Tab to cycle through completions
 TAB: menu-complete
+
 # Use Shift-Tab to list all completions 
 "\e[Z": complete
+
 # Use the text that has already been typed as the prefix for searching through
 # commands (i.e. more intelligent Up/Down behavior)
 "\e[B": history-search-forward

@@ -8,17 +8,25 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 # ------
 # Directory Bookmarks
 # ------
-export DESKTOP="$HOME/Desktop"
-export DOWNLOADS="$HOME/Downloads"
-export DROPBOX="$HOME/Dropbox"
+if [ $(uname) != "Darwin" ]; then
+	export DIR_DESKTOP="$HOME/Desktop"
+	export DIR_DOWNLOADS="$HOME/Downloads"
+	export DIR_DROPBOX="$HOME/Dropbox"
+	export DIR_VIM="$HOME/.vim"
+fi
+
 
 # ------
 # File Bookmarks
 # ------
 export BASH_PROFILE="$HOME/.bash_profile"
 export BASHRC="$HOME/.bashrc"
+export VIMRC="$HOME/.vimrc"
+export HOSTS="/etc/hosts"
 
+# ------
 # Default Applications
+# ------
 if [[ "$EDITOR" == "" ]] ; then
 	export EDITOR="vim"
 	export VISUAL="vim"
@@ -27,7 +35,7 @@ fi
 # ------
 # Settings for colors in terminal
 # ------
-export TERM='xterm-color'
+export TERM='xterm-256color'
 export CLICOLOR=1
 export GREP_OPTIONS='--color=auto'
 
